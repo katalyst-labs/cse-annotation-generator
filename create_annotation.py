@@ -12,7 +12,7 @@ def create_annotations_xml(blocklist_file: str, annotations_file: str) -> None:
     root = ET.Element("Annotations", xmlns="http://www.google.com/cse/api/0.1")
 
     with open(blocklist_file, "r") as fp:
-        domains = fp.readlines()
+        domains = fp.read().splitlines()
 
     for domain in domains:
         domain = domain.strip()
